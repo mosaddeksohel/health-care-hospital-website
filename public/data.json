@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/JHL12Bd/Woman-patient-at-dentist.jpg",
+        "name": "Dental",
+        "fee": 1200
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/JksJNSm/Close-up-Of-A-Man-Wearing-Knee-Brace-Over-White-Background.jpg",
+        "name": "Arthopedic",
+        "fee": 2000
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/gRYKYQB/female-face-before-after-cosmetic-nose-surgery-126927-7.jpg",
+        "name": "Surgery",
+        "fee": 1500
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/XkMB55Z/confident-young-woman-with-acne-close-up.jpg",
+        "name": "Skin Care",
+        "fee": 900
+    }
+]
