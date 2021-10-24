@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className="d-flex container mt-3">
+        <div className="d-flex container mt-3 footer">
             <div className="w-25">
                 <p>Sed magna nulla, pulvinar vel ante vel, fringilla vulputate nibh. Dictum, placerat massa non, bibendum ante. Sed magna nulla, pulvinar vel ante vel, fringilla vulputate nibh.</p>
             </div>
@@ -13,17 +14,17 @@ const Footer = () => {
                 <h6>Monday - Sunday 08:00-19:00</h6>
                 <h6>01780000000</h6>
             </div>
-            <div className="w-25">
-                <Link>Home</Link> <br />
-                <Link>About</Link><br />
-                <Link>Services</Link><br />
-                <Link>Doctors</Link><br />
-                <Link>Home</Link>
+            <div className="w-25 link">
+                <Link to="/home">Home</Link> <br />
+                <Link to="/about">About</Link><br />
+                <Link to="/services">Services</Link><br />
+                <Link to="/doctors">Doctors</Link><br />
             </div>
             <div className="w-25">
                 <h3>Follow us on</h3>
+
             </div>
-        </div>
+        </div >
     );
 };
 

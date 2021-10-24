@@ -1,8 +1,11 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Banner from './Pages/Banner/Banner';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
+import Login from './Login/Login';
+import Home from './Home/Home';
+import Register from './Login/Register';
+import About from './About/About';
 
 function App() {
   return (
@@ -10,8 +13,20 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path="home">
-            <Banner></Banner>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <Route path="/about">
+            <About></About>
           </Route>
         </Switch>
         <Footer></Footer>
