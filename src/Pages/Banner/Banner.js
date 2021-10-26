@@ -3,16 +3,18 @@ import '../../images/Health-care.jpg'
 import '../../images/doctor.png'
 import './Banner.css'
 import { Carousel } from 'react-bootstrap';
+import '../../images/depositphotos_170238576-stock-photo-confident-doctor-with-arms-crossed.jpg'
+import '../../images/depositphotos_242549772-stock-photo-medical-healthcare-concept-doctor-hospital.jpg'
+import '../../images/healthcare-people-group-professional-doctor-260nw-1214056192.jpg'
 
 const Banner = () => {
     return (
-
         <div className="banner">
             <Carousel>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="../../images/authentication-standing-physician-stylish-icons.jpg"
+                        src="../../images/depositphotos_170238576-stock-photo-confident-doctor-with-arms-crossed.jpg"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -23,10 +25,9 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="holder.js/800x400?text=Second slide&bg=282c34"
+                        src="../../images/depositphotos_242549772-stock-photo-medical-healthcare-concept-doctor-hospital.jpg"
                         alt="Second slide"
                     />
-
                     <Carousel.Caption>
                         <h3>Second slide label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -35,7 +36,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=20232a"
+                        src="../../images/healthcare-people-group-professional-doctor-260nw-1214056192.jpg"
                         alt="Third slide"
                     />
 
@@ -46,7 +47,6 @@ const Banner = () => {
                 </Carousel.Item>
             </Carousel>
         </div >
-
     );
 };
 
