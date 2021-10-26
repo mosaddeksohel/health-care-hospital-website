@@ -1,14 +1,10 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useFirebase from '../../../useFirebase/useFirebase';
+import useAuth from '../../../useFirebase/useAuth';
 
 const Header = () => {
-    const { user, logout } = useFirebase();
+    const { user, logOut } = useAuth();
     return (
-
-
         <div>
             <>
                 <Navbar bg="dark" variant="dark">
@@ -20,21 +16,19 @@ const Header = () => {
                             <Nav.Link href="/services">Services</Nav.Link>
                             <Nav.Link href="/pricing">Our Doctors</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
-                            {user.email ?
-                                <button onClick={logout}>Log Out</button>
-                                :
-                                <Nav.Link href="/login">login</Nav.Link>}
                             <Navbar.Text>
-                                <a href="/login">{user.name}</a>
                             </Navbar.Text>
+                            <span className='text-white mx-2'>{user.displayName}</span>
+                            {user.displayName ?
+                                <button onClick={logOut}>Log Out</button>
+                                : <Nav.Link href="/login">login</Nav.Link>}
+
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
             </>
 
         </div>
-
-
     );
 };
 

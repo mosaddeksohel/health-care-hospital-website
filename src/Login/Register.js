@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../useFirebase/useFirebase';
 
@@ -12,7 +11,7 @@ const Register = () => {
                 <br />
                 <input onBlur={handlePasswordChange} className="mt-2" type="password" name="" id="" placeholder="Your Password" />
                 <br />
-                <h2 className="text-danger">{error}</h2>
+                <p className="text-danger">{error}</p>
 
                 <input className="mt-2" type="submit" value="submit" />
                 <br />

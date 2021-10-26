@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import initializationAuthentication from "../Pages/firebase/firebase.init";
 
 initializationAuthentication()
@@ -12,10 +12,7 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log(result.user)
-            })
+        return signInWithPopup(auth, googleProvider)
     }
 
     const logOut = () => {
@@ -26,7 +23,6 @@ const useFirebase = () => {
     }
     const handleRegistration = e => {
         e.preventDefault();
-        console.log(email, password)
         if (password.length < 6) {
             setError('password must be 6 characters')
             return;
@@ -35,8 +31,20 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-            })
 
+            })
+        setError('')
+    }
+    const processLogin = e => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                setError('')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     const handleEmailChange = e => {
         setEmail(e.target.value)
@@ -44,7 +52,6 @@ const useFirebase = () => {
     const handlePasswordChange = e => {
         setPassword(e.target.value)
     }
-
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -54,17 +61,15 @@ const useFirebase = () => {
         });
     }, [])
 
-
     return {
         user,
         signInUsingGoogle,
-        logOut,
         handleRegistration,
         handleEmailChange,
+        processLogin,
         handlePasswordChange,
-        error
-
-
+        error,
+        logOut
     }
 }
 

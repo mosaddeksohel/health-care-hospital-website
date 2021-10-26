@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    const { img, name } = props.service;
+    const { img, name, text } = props.service;
     return (
         <div className="mx-auto">
             <div>
@@ -11,15 +12,13 @@ const Service = (props) => {
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            {text}
                         </Card.Text>
-                        <Button variant="primary">See Details</Button>
+                        <Button variant="warning"><Link to="/product">See Details</Link></Button>
                     </Card.Body>
                 </Card>
             </div>
-
-        </div>
+        </div >
     );
 };
 
