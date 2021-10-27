@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import useAuth from '../useFirebase/useAuth';
+import useAuth from '../../useFirebase/useAuth';
+import './registration.css'
 
 const Register = () => {
     const { handleRegistration, handleEmailChange, handlePasswordChange, error } = useAuth();
     return (
-        <div className="mb-5">
+        <div className="registration">
             <h2>Register an Account</h2>
             <form onSubmit={handleRegistration}>
                 <input onBlur={handleEmailChange} className="mt-" type="email" placeholder="Your Email" />

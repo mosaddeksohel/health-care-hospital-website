@@ -1,25 +1,23 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 
-const Service = (props) => {
-    const { img, name, text } = props.service;
+const displayDoctor = (props) => {
+    const { name, img, designation } = props.doctor;
     return (
-        <div className="mx-auto">
+        <div>
             <div>
                 <Card style={{ width: '22rem' }}>
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            {text}
+                            {designation}
                         </Card.Text>
-                        <Button variant="warning"><Link to="/product">See Details</Link></Button>
                     </Card.Body>
                 </Card>
             </div>
-        </div >
+        </div>
     );
 };
 
-export default Service;
+export default displayDoctor;

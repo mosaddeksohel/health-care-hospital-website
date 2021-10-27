@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router';
-import useAuth from '../useFirebase/useAuth';
+import useAuth from '../../useFirebase/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user } = useAuth();
@@ -20,7 +20,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 
 
 
-        </Route>
+        </Route >
     );
 };
 

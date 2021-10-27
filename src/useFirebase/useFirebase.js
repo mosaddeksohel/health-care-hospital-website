@@ -36,6 +36,7 @@ const useFirebase = () => {
         setError('')
     }
     const processLogin = e => {
+        e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
@@ -68,6 +69,7 @@ const useFirebase = () => {
         handleEmailChange,
         processLogin,
         handlePasswordChange,
+        setError,
         error,
         logOut
     }

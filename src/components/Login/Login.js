@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
-import useAuth from '../useFirebase/useAuth';
+import useAuth from '../../useFirebase/useAuth';
 import './login.css'
 
 const Login = () => {
