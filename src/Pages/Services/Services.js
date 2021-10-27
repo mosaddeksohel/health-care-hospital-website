@@ -19,7 +19,7 @@ const Services = () => {
                     services.map(service => <Service
                         key={service.id}
                         service={service}
-                    ></Service>).slice(0, 6)
+                    ></Service>)
                 }
 
             </div>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import useFirebase from '../useFirebase/useFirebase';
+import useAuth from '../useFirebase/useAuth';
 
 const Register = () => {
-    const { handleRegistration, handleEmailChange, handlePasswordChange, error } = useFirebase();
+    const { handleRegistration, handleEmailChange, handlePasswordChange, error } = useAuth();
     return (
         <div className="mb-5">
             <h2>Register an Account</h2>
@@ -16,7 +16,6 @@ const Register = () => {
                 <input className="mt-2" type="submit" value="submit" />
                 <br />
                 <p>Already have an account <Link to="/login">Login</Link></p>
-
             </form>
         </div>
     );

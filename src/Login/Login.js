@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../useFirebase/useAuth';
+import './login.css'
 
 const Login = () => {
     const { signInUsingGoogle, processLogin, handleEmailChange, handlePasswordChange, error } = useAuth();
