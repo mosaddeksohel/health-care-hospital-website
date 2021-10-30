@@ -7,12 +7,12 @@
     {
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KQd8tomBum5ejBKilcfdWDALTBU5dvNoZQ&usqp=CAU",
         "name": "Maicel Robert",
-        "designation": "Dentist"
+        "designation": "Cardiologist"
     },
     {
         "img": "https://images.squarespace-cdn.com/content/v1/5ebcc33bcf2c4023b543eb58/1596007895634-3PA7XATGTE96FS4YE8W6/Stuart++Prosser.jpg",
         "name": "Stuart",
-        "designation": "Dentist"
+        "designation": "Eye Specialist"
     },
     {
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUy5NKTfropLnBawn5cehrKN8XXEX6jWg2Cg&usqp=CAU",
@@ -20,7 +20,7 @@
         "designation": "Dentist"
     },
     {
-        "img": "",
+        "img": "https://www.narayanahealth.org/sites/default/files/styles/doctors_image_style_200x200_/public/doctor-profile/2Z0A9924C_0_0.jpg?itok=oJrT3t3O",
         "name": "Michel",
         "designation": "Gyne serjent"
     },

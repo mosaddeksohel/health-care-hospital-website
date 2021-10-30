@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const displayDoctor = (props) => {
-    const { name, img, designation } = props.doctor;
+const Doctors = (props) => {
+    const { name, img, designation } = props.dt;
     return (
-        <div>
+        <div className="container">
             <div>
                 <Card style={{ width: '22rem' }}>
                     <Card.Img variant="top" src={img} />
@@ -20,4 +20,4 @@ const displayDoctor = (props) => {
     );
 };
 
-export default displayDoctor;
+export default Doctors;

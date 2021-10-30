@@ -11,6 +11,8 @@ import Appionment from './components/Booking/Appionment';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import AuthProvider from './components/Context/AuthProvider';
+import PageNotFound from './Pages/PageNotFound/PageNotFound';
+import Doctor from './components/Doctor/Doctor/Doctor';
 
 function App() {
   return (
@@ -38,13 +40,16 @@ function App() {
               <Register></Register>
             </Route>
             <Route path="/doctor">
-              <displayDoctor></displayDoctor>
+              <Doctor></Doctor>
             </Route>
             <PrivateRoute path="/appoinment/:appionmentid">
               <Appionment></Appionment>
             </PrivateRoute>
             <Route path="/about">
               <About></About>
+            </Route>
+            <Route path="*">
+              <PageNotFound></PageNotFound>
             </Route>
           </Switch>
           <Footer></Footer>

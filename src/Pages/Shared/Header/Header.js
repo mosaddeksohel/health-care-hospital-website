@@ -5,7 +5,7 @@ import useAuth from '../../../useFirebase/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth();
     return (
-        <div>
+        <div className="mb-2">
             <>
                 <Navbar bg="dark" variant="dark">
                     <Container>
@@ -14,7 +14,7 @@ const Header = () => {
                         <Navbar.Collapse className="justify-content-end">
                             <Nav.Link href="/home">Home</Nav.Link>
                             <Nav.Link href="/services">Services</Nav.Link>
-                            <Nav.Link href="/doctor">Our Doctors</Nav.Link>
+                            <Nav.Link href="/doctor">Doctors</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                             <Navbar.Text>
                             </Navbar.Text>

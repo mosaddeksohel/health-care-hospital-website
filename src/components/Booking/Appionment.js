@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 
-const Appionment = () => {
+const Appionment = (props) => {
     const { appionmentid } = useParams();
     return (
         <div>
