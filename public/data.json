@@ -3,36 +3,42 @@
         "id": 1,
         "img": "https://i.ibb.co/JHL12Bd/Woman-patient-at-dentist.jpg",
         "name": "Dental",
+        "description": "Oral surgeons, also known as maxillofacial surgeons, are medical specialists within the broader field of dentistry. They perform corrective and therapeutic procedures on the mouths and jaws of their patients and often work in conjunction with other dentists, surgeons, and orthodontists.",
         "fee": 1200
     },
     {
         "id": 2,
         "img": "https://i.ibb.co/JksJNSm/Close-up-Of-A-Man-Wearing-Knee-Brace-Over-White-Background.jpg",
         "name": "Arthopedic",
+        "description": "Orthopedic surgeons are doctors who specialize in the musculoskeletal system - the bones, joints, ligaments, tendons, and muscles that are so essential to movement and everyday life. With more than 200 bones in the human body, it’s an in-demand specialty. Dislocated joints. Hip or back pain.",
         "fee": 2000
     },
     {
         "id": 3,
         "img": "https://i.ibb.co/gRYKYQB/female-face-before-after-cosmetic-nose-surgery-126927-7.jpg",
-        "name": "Surgery",
+        "name": "Eye Surgery",
+        "description": "Eye surgery, also known as ocular surgery, is surgery performed on the eye or its adnexa, typically by an ophthalmologist. The eye is a very fragile organ, and requires extreme care before, during, and after a surgical procedure to minimise or prevent further damage.",
         "fee": 1500
     },
     {
         "id": 4,
         "img": "https://www.hrrmc.com/images/Cardiology.jpg",
         "name": "Cardiology",
+        "description": "Cardiovascular surgery, also referred to as cardiac surgery or heart surgery, describes any surgical procedure that involves the heart, or the blood vessels that carry blood to and from the heart. A sphygmomanometer is used to measure blood pressure.",
         "fee": 1500
     },
     {
         "id": 5,
-        "img": "https://i.ibb.co/gRYKYQB/female-face-before-after-cosmetic-nose-surgery-126927-7.jpg",
-        "name": "Surgery",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrIin7eXNz0uDEGcAJFBKnTadji8qGglhX0w&usqp=CAU",
+        "name": "Heart Surgery",
+        "description": "moking generally has negative health effects, because smoke inhalation inherently poses challenges to various physiologic processes such as respiration. Smoking tobacco is among the leading causes of many diseases such as lung cancer, heart attack, COPD, erectile dysfunction, and birth defects.",
         "fee": 1500
     },
     {
         "id": 6,
         "img": "https://i.ibb.co/XkMB55Z/confident-young-woman-with-acne-close-up.jpg",
         "name": "Skin Care",
+        "description": "How do you describe skin care? Image result for Skin Care surgery description Skin care is the range of practices that support skin integrity, enhance its appearance and relieve skin conditions. They can include nutrition, avoidance of excessive sun exposure and appropriate use of emollients.",
         "fee": 900
     }
 ]

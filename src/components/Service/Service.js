@@ -2,23 +2,26 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Service = (props) => {
-    const { img, name, text, id } = props.service;
+const Service = ({ service }) => {
+    const { img, name, id, description } = service;
     return (
-        <div className="mx-auto">
+
+        <div className="container">
             <div>
                 <Card style={{ width: '22rem' }}>
-                    <Card.Img variant="top" src={img} />
+                    <Card.Img style={{ height: '250px' }} variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Text>
-                            {text}
+                        <Card.Text style={{ textAlign: 'justify' }}>
+                            {description}
                         </Card.Text>
-                        <Button variant="warning"><Link to={`/appoinment/${id}`}>Appoinment</Link></Button>
+                        <Button style={{ textDecoration: 'none', width: '70%' }} variant="warning"><Link style={{ textDecoration: 'none' }} to={`/appoinment/${id}`}>Appoinment</Link></Button>
                     </Card.Body>
                 </Card>
             </div>
         </div >
+
+
     );
 };
 

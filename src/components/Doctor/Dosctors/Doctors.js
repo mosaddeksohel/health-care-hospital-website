@@ -7,10 +7,10 @@ const Doctors = (props) => {
         <div className="container">
             <div>
                 <Card style={{ width: '22rem' }}>
-                    <Card.Img variant="top" src={img} />
+                    <Card.Img style={{ height: '350px' }} variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Text>
+                        <Card.Text style={{ textAlign: 'center' }}>
                             {designation}
                         </Card.Text>
                     </Card.Body>

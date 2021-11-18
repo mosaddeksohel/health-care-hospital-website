@@ -1,78 +1,108 @@
-import { useEffect, useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+
+// export default useFirebase;
+import { useEffect, useState } from "react";
 import initializationAuthentication from "../Pages/firebase/firebase.init";
 
-initializationAuthentication()
+// import initializeAuthentication from "../Page/Firebase/firebase.init";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+
+// initialize firebase application 
+initializationAuthentication();
+
 const useFirebase = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
-    const auth = getAuth()
     const googleProvider = new GoogleAuthProvider();
+    const auth = getAuth();
 
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = (location, history) => {
         return signInWithPopup(auth, googleProvider)
-    }
-
-    const logOut = () => {
-        signOut(auth)
-            .then(() => {
-                setUser({})
-            })
-    }
-    const handleRegistration = e => {
-        e.preventDefault();
-        if (password.length < 6) {
-            setError('password must be 6 characters')
-            return;
-        }
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-
-            })
-        setError('')
-    }
-    const processLogin = e => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination)
                 setError('')
             })
-            .catch(error => {
-                setError(error.message)
-            })
-    }
-    const handleEmailChange = e => {
-        setEmail(e.target.value)
-    }
-    const handlePasswordChange = e => {
-        setPassword(e.target.value)
     }
 
+
+
+    const registerUser = (email, password, name, location, history) => {
+        setIsLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setError('');
+                const newUser = { email, displayName: name };
+
+                setUser(newUser);
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+
+                }).catch((error) => {
+
+                });
+                const destination = location?.state?.from || '/';
+                history.replace(destination)
+
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+
+    };
+
+    const LoginUser = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination)
+                setError('')
+            })
+            .catch((error) => {
+                setError(error.message);
+            }).finally(() => setIsLoading(false));
+    }
+
+    // state change observation
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
-            };
+                setUser(user);
+            } else {
+                setUser({});
+            }
+            setIsLoading(false);
         });
-    }, [])
+        return () => unsubscribe;
+    }, [auth])
+
+
+
+
+    const Logout = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        })
+            .finally(() => setIsLoading(false));
+    }
+
+
 
     return {
         user,
-        signInUsingGoogle,
-        handleRegistration,
-        handleEmailChange,
-        processLogin,
-        handlePasswordChange,
-        setError,
+        isLoading,
         error,
-        logOut
-    }
+        signInUsingGoogle,
+        registerUser,
+        LoginUser,
+        Logout
+    };
 }
+
 
 export default useFirebase;

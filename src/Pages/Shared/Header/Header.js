@@ -3,11 +3,11 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import useAuth from '../../../useFirebase/useAuth';
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { user, Logout } = useAuth();
     return (
-        <div className="mb-2">
+        <div>
             <>
-                <Navbar bg="dark" variant="dark">
+                <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
                     <Container>
                         <Navbar.Brand href="/home">Health Care</Navbar.Brand>
                         <Navbar.Toggle />
@@ -20,7 +20,7 @@ const Header = () => {
                             </Navbar.Text>
                             <span className='text-white mx-2'>{user.displayName}</span>
                             {user.displayName || user.email ?
-                                <button onClick={logOut}>Log Out</button>
+                                <button style={{ color: '#0d6efd', backgroundColor: '#212529', border: 'none' }} onClick={Logout}>Log Out</button>
                                 : <Nav.Link href="/login">login</Nav.Link>}
 
                         </Navbar.Collapse>

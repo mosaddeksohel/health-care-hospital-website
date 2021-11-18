@@ -1,10 +1,11 @@
 import React from 'react';
 import './about.css'
+
 const About = () => {
     return (
         <div className="about">
             <div className="mt-3 container justify-center">
-                <h2 className="text-primary mt-5">About Our Mission</h2>
+                <h2 className="text-primary mt-1">About Our Mission</h2>
                 <div>
                     <h4>Vision: To be the emerging markets largest integrated healthcare network.</h4>
                     <h4>Mission: To build a legacy of accessible, high quality, safe private healthcare for low and middle-income patients in emerging markets. </h4>

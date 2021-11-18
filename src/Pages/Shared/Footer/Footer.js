@@ -15,7 +15,7 @@ const Footer = () => {
                     <h6>Monday - Sunday 08:00-19:00</h6>
                     <h6>01780000000</h6>
                 </div>
-                <div className="w-25 link">
+                <div className="w-25">
                     <Link to="/home">Home</Link> <br />
                     <Link to="/about">About</Link><br />
                     <Link to="/services">Services</Link><br />

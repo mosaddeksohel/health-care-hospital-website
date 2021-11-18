@@ -4,7 +4,6 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import Home from './components/Home/Home';
 import About from './components/About/About';
-import Product from './components/Service/Product';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Services2 from './components/Service/Services2';
 import Appionment from './components/Booking/Appionment';
@@ -33,18 +32,16 @@ function App() {
             <Route path="/services">
               <Services2></Services2>
             </Route>
-            <PrivateRoute path="/product">
-              <Product></Product>
-            </PrivateRoute>
             <Route path="/register">
               <Register></Register>
             </Route>
             <Route path="/doctor">
               <Doctor></Doctor>
             </Route>
-            <PrivateRoute path="/appoinment/:appionmentid">
+            <PrivateRoute path="/appoinment/:appionmentId">
               <Appionment></Appionment>
             </PrivateRoute>
+
             <Route path="/about">
               <About></About>
             </Route>
