@@ -1,3 +1,4 @@
+import { Box } from '@mui/system';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import useAuth from '../../../useFirebase/useAuth';
@@ -21,7 +22,12 @@ const Header = () => {
                             <span className='text-white mx-2'>{user.displayName}</span>
                             {user.displayName || user.email ?
                                 <button style={{ color: '#0d6efd', backgroundColor: '#212529', border: 'none' }} onClick={Logout}>Log Out</button>
-                                : <Nav.Link href="/login">login</Nav.Link>}
+                                :
+                                <>
+                                    <Nav.Link href="/register">Singup</Nav.Link>
+                                    <Nav.Link href="/login">login</Nav.Link>
+                                </>
+                            }
 
                         </Navbar.Collapse>
                     </Container>
